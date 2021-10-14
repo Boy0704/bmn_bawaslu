@@ -12,6 +12,18 @@ class A_user extends CI_Controller
         $this->load->library('form_validation');
     }
 
+    public function aktif($n,$id_user)
+    {
+        $this->db->where('id_user', $id_user);
+        $this->db->update('a_user', ['aktif' => $n]);
+        ?>
+        <script type="text/javascript">
+            alert("Berhasil diupdate !");
+            window.location = "<?php echo base_url() ?>a_user";
+        </script>
+        <?php
+    }
+
     public function index()
     {
         $q = urldecode($this->input->get('q', TRUE));
@@ -76,6 +88,8 @@ class A_user extends CI_Controller
         'username' => set_value('username'),
         'password' => set_value('password'),
         'jabatan' => set_value('jabatan'),
+        'email' => set_value('email'),
+        'alamat' => set_value('alamat'),
         'level' => set_value('level'),
         'foto' => set_value('foto'),
     );
@@ -94,7 +108,9 @@ class A_user extends CI_Controller
         'nama_lengkap' => $this->input->post('nama_lengkap',TRUE),
         'username' => $this->input->post('username',TRUE),
         'password' => md5($this->input->post('password',TRUE)),
-        'jabatan' => set_value('jabatan'),
+        'jabatan' => $this->input->post('jabatan'),
+        'email' => $this->input->post('email'),
+        'alamat' => $this->input->post('alamat'),
         'level' => $this->input->post('level',TRUE),
         'foto' => $img,
         );
@@ -120,6 +136,8 @@ class A_user extends CI_Controller
         'username' => set_value('username', $row->username),
         'password' => set_value('password', $row->password),
         'jabatan' => set_value('jabatan', $row->jabatan),
+        'email' => set_value('email', $row->email),
+        'alamat' => set_value('alamat', $row->alamat),
         'level' => set_value('level', $row->level),
         'foto' => set_value('foto', $row->foto),
         );
@@ -142,6 +160,8 @@ class A_user extends CI_Controller
         'username' => $this->input->post('username',TRUE),
         'password' => $retVal = ($this->input->post('password') == '') ? $_POST['password_old'] : md5($this->input->post('password',TRUE)),
         'jabatan' => $this->input->post('jabatan',TRUE),
+        'email' => $this->input->post('email'),
+        'alamat' => $this->input->post('alamat'),
         'level' => $this->input->post('level',TRUE),
         'foto' => $retVal = ($_FILES['foto']['name'] == '') ? $_POST['foto_old'] : upload_gambar_biasa('user', 'image/user/', 'jpeg|png|jpg|gif', 10000, 'foto'),
         );

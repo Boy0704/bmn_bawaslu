@@ -33,15 +33,19 @@
         <table class="table table-bordered" style="margin-bottom: 10px">
             <tr>
                 <th>No</th>
-		<th>Nama1</th>
-		<th>Nip1</th>
-		<th>Jabatan1</th>
-		<th>Nama2</th>
-		<th>Nip2</th>
-		<th>Jabatan2</th>
-		<th>Id Barang</th>
+		<th>Nama P1</th>
+		<th>Nip P1</th>
+		<th>Jabatan P1</th>
+		<th>Nama P2</th>
+		<th>Nip P2</th>
+		<th>Jabatan P2</th>
+        <th>Barang</th>
+		<th>File</th>
 		<th>Action</th>
             </tr><?php
+            if ($this->session->userdata('level') == 'user') {
+                $this->db->where('id_user', $this->session->userdata('id_user'));
+            }
             foreach ($bapb_data as $bapb)
             {
                 ?>
@@ -53,7 +57,36 @@
 			<td><?php echo $bapb->nama2 ?></td>
 			<td><?php echo $bapb->nip2 ?></td>
 			<td><?php echo $bapb->jabatan2 ?></td>
-			<td><?php echo $bapb->id_barang ?></td>
+            <td>
+                <table class="table">
+                    <tr>
+                        <td>Nama Barang</td>
+                        <td>:</td>
+                        <td><?php echo get_data('barang','id_barang',$bapb->id_barang,'nama_barang') ?></td>
+                    </tr>
+                    <tr>
+                        <td>Merk</td>
+                        <td>:</td>
+                        <td><?php echo get_data('barang','id_barang',$bapb->id_barang,'merk') ?></td>
+                    </tr>
+                    <tr>
+                        <td>Tahun</td>
+                        <td>:</td>
+                        <td><?php echo get_data('barang','id_barang',$bapb->id_barang,'tahun_perolehan') ?></td>
+                    </tr>
+                    <tr>
+                        <td>Unit</td>
+                        <td>:</td>
+                        <td><?php echo get_data('barang','id_barang',$bapb->id_barang,'satuan') ?></td>
+                    </tr>
+                    <tr>
+                        <td>Kondisi</td>
+                        <td>:</td>
+                        <td><?php echo get_data('barang','id_barang',$bapb->id_barang,'kondisi_barang') ?></td>
+                    </tr>
+                </table>
+            </td>
+			<td><a href="image/file/<?php echo $bapb->file ?>" target="_blank"><?php echo $bapb->file ?></a></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('bapb/update/'.$bapb->id_bapb),'<span class="label label-info">Ubah</span>'); 

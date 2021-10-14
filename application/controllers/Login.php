@@ -9,12 +9,28 @@ class Login extends CI_Controller {
 		$this->load->view('login_new');
 	}
 
+	public function register()
+	{
+		$this->load->view('register');
+	}
+
+	public function aksi_daftar()
+	{
+		if ($_POST) {
+			$_POST['level'] = 'user';
+			$_POST['password'] = md5($this->input->post('password'));
+			$this->db->insert('a_user', $_POST);
+			$this->session->set_flashdata('message', alert_biasa('Silahkan menghubungi admin untuk meminta aktivasi akun kamu !','success'));
+			redirect('login','refresh');
+		}
+	}
+
 	public function aksi_login()
 	{
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
 			// $hashed = '$2y$10$LO9IzV0KAbocIBLQdgy.oeNDFSpRidTCjXSQPK45ZLI9890g242SG';
-			$cek_user = $this->db->query("SELECT * FROM a_user WHERE username='$username' and password='$password' ");
+			$cek_user = $this->db->query("SELECT * FROM a_user WHERE username='$username' and password='$password' and aktif='y' ");
 			// if (password_verify($password, $hashed)) {
 			if ($cek_user->num_rows() > 0) {
 				foreach ($cek_user->result() as $row) {

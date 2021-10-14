@@ -6,11 +6,16 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">Nama <?php echo form_error('nama') ?></label>
-            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo $nama; ?>" />
+            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama" value="<?php echo ($this->uri->segment(2) == 'create') ? $this->session->userdata('nama') : $nama; ?>" />
         </div>
 	    <div class="form-group">
-            <label for="int">Id Barang <?php echo form_error('id_barang') ?></label>
-            <input type="text" class="form-control" name="id_barang" id="id_barang" placeholder="Id Barang" value="<?php echo $id_barang; ?>" />
+            <label for="int">Barang <?php echo form_error('id_barang') ?></label>
+            <select class="form-control select2" name="id_barang">
+                <option value="<?php echo $id_barang ?>"><?php echo get_data('barang','id_barang',$id_barang,'nama_barang') ?></option>
+                <?php foreach ($this->db->get('barang')->result() as $key => $value): ?>
+                    <option value="<?php echo $value->id_barang ?>"><?php echo $value->nama_barang ?></option>
+                <?php endforeach ?>
+            </select>
         </div>
 	    <div class="form-group">
             <label for="int">Qty <?php echo form_error('qty') ?></label>

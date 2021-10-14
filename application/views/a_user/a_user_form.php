@@ -8,6 +8,17 @@
             <label for="varchar">Username <?php echo form_error('username') ?></label>
             <input type="text" class="form-control" name="username" id="username" placeholder="Username" value="<?php echo $username; ?>" />
         </div>
+
+        <div class="form-group">
+            <label for="varchar">Email <?php echo form_error('email') ?></label>
+            <input type="text" class="form-control" name="email" id="email" placeholder="email" value="<?php echo $email; ?>" />
+        </div>
+
+        <div class="form-group">
+            <label for="varchar">Alamat <?php echo form_error('alamat') ?></label>
+            <input type="text" class="form-control" name="alamat" id="alamat" placeholder="alamat" value="<?php echo $alamat; ?>" />
+        </div>
+
         <div class="form-group">
             <label for="varchar">Password <?php echo form_error('password') ?></label>
             <input type="text" class="form-control" name="password" id="password" placeholder="Password" value="" />
@@ -25,8 +36,8 @@
             <!-- <input type="text" class="form-control" name="level" id="level" placeholder="Level" value="<?php echo $level; ?>" /> -->
             <select name="level" class="form-control">
                 <option value="<?php echo $level ?>"><?php echo $level ?></option>
-                <option value="admin">ADMIN/VERIFIKATOR</option>
-                <option value="operator">PUM</option>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
             </select>
         </div>
         <div class="form-group">

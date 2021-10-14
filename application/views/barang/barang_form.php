@@ -38,7 +38,12 @@
         </div>
 	    <div class="form-group">
             <label for="varchar">Kondisi Barang <?php echo form_error('kondisi_barang') ?></label>
-            <input type="text" class="form-control" name="kondisi_barang" id="kondisi_barang" placeholder="Kondisi Barang" value="<?php echo $kondisi_barang; ?>" />
+            <select class="form-control" name="kondisi_barang">
+                <option value="<?php echo $kondisi_barang ?>"><?php echo $kondisi_barang ?></option>
+                <option value="Barang Rusak Berat">Barang Rusak Berat</option>
+                <option value="Barang Rusak Ringan">Barang Rusak Ringan</option>
+                <option value="Barang Baik">Barang Baik</option>
+            </select>
         </div>
 	    <input type="hidden" name="id_barang" value="<?php echo $id_barang; ?>" /> 
 	    <button type="submit" class="btn btn-primary"><?php echo $button ?></button> 

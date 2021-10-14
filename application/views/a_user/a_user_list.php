@@ -48,9 +48,14 @@
             <td><?php echo $a_user->nama_lengkap ?></td>
             <td><?php echo $a_user->username ?></td>
             <td><?php echo $a_user->jabatan ?></td>
-            <td><?php echo $retVal = ($a_user->level == 'admin') ? 'Admin/Verifikator' : 'PUM' ; ?></td>
+            <td><?php echo $a_user->level ?></td>
             <td><img src="image/user/<?php echo $a_user->foto ?>" style="width: 100px;"></td>
             <td style="text-align:center" width="200px">
+                <?php if ($a_user->aktif == 't'): ?>
+                    <a href="a_user/aktif/y/<?php echo $a_user->id_user ?>" class="label label-success">Aktifkan</a>
+                <?php else: ?>
+                    <a href="a_user/aktif/t/<?php echo $a_user->id_user ?>" class="label label-warning">Non-Aktif</a>
+                <?php endif ?>
                 <?php 
                 echo anchor(site_url('a_user/update/'.$a_user->id_user),'<span class="label label-info">Ubah</span>'); 
                 echo ' | '; 

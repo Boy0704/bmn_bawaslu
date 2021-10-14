@@ -30,8 +30,8 @@
         <li><a href="app"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         
         <li><a href="barang"><i class="fa fa-clone"></i> <span>Data Barang</span></a></li>
-        <li><a href="app/pengembangan"><i class="fa fa-pencil"></i> <span>Permohonan Peminjaman Barang</span></a></li>
-        <li><a href="app/pengembangan"><i class="fa fa-pencil"></i> <span>Berita Acara Serah Terima</span></a></li>
+        <li><a href="permohonan_pinjam"><i class="fa fa-pencil"></i> <span>Permohonan Peminjaman <br> Barang</span></a></li>
+        <li><a href="bapb"><i class="fa fa-pencil"></i> <span>Berita Acara Serah Terima</span></a></li>
         
         
       
@@ -41,7 +41,7 @@
         <?php } else {
           ?>
           <li><a href="app"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-          <li><a href="app/pengajuan"><i class="fa fa-pencil"></i> <span>Pengajuan Dokumen SPJ</span></a></li>
+          <li><a href="permohonan_pinjam"><i class="fa fa-pencil"></i> <span>Permohonan Peminjaman <br> Barang</span></a></li>
           <?php
         } ?>
         <!-- <li class="header">LABELS</li>

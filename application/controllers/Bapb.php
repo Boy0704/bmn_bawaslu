@@ -39,7 +39,7 @@ class Bapb extends CI_Controller
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
-            'judul_page' => 'bapb/bapb_list',
+            'judul_page' => 'Berita Acara Peminjaman Barang',
             'konten' => 'bapb/bapb_list',
         );
         $this->load->view('v_index', $data);
@@ -69,7 +69,7 @@ class Bapb extends CI_Controller
     public function create() 
     {
         $data = array(
-            'judul_page' => 'bapb/bapb_form',
+            'judul_page' => 'Berita Acara Peminjaman Barang',
             'konten' => 'bapb/bapb_form',
             'button' => 'Create',
             'action' => site_url('bapb/create_action'),
@@ -80,7 +80,8 @@ class Bapb extends CI_Controller
 	    'nama2' => set_value('nama2'),
 	    'nip2' => set_value('nip2'),
 	    'jabatan2' => set_value('jabatan2'),
-	    'id_barang' => set_value('id_barang'),
+        'id_barang' => set_value('id_barang'),
+	    'file' => set_value('file'),
 	);
         $this->load->view('v_index', $data);
     }
@@ -92,6 +93,9 @@ class Bapb extends CI_Controller
         if ($this->form_validation->run() == FALSE) {
             $this->create();
         } else {
+
+            $file = upload_gambar_biasa('file', 'image/file/', 'pdf', 10000, 'file');
+
             $data = array(
 		'nama1' => $this->input->post('nama1',TRUE),
 		'nip1' => $this->input->post('nip1',TRUE),
@@ -99,7 +103,8 @@ class Bapb extends CI_Controller
 		'nama2' => $this->input->post('nama2',TRUE),
 		'nip2' => $this->input->post('nip2',TRUE),
 		'jabatan2' => $this->input->post('jabatan2',TRUE),
-		'id_barang' => $this->input->post('id_barang',TRUE),
+        'id_barang' => $this->input->post('id_barang',TRUE),
+		'file' => $file,
 	    );
 
             $this->Bapb_model->insert($data);
@@ -114,7 +119,7 @@ class Bapb extends CI_Controller
 
         if ($row) {
             $data = array(
-                'judul_page' => 'bapb/bapb_form',
+                'judul_page' => 'Berita Acara Peminjaman Barang',
                 'konten' => 'bapb/bapb_form',
                 'button' => 'Update',
                 'action' => site_url('bapb/update_action'),
@@ -125,7 +130,8 @@ class Bapb extends CI_Controller
 		'nama2' => set_value('nama2', $row->nama2),
 		'nip2' => set_value('nip2', $row->nip2),
 		'jabatan2' => set_value('jabatan2', $row->jabatan2),
-		'id_barang' => set_value('id_barang', $row->id_barang),
+        'id_barang' => set_value('id_barang', $row->id_barang),
+		'file' => set_value('file', $row->file),
 	    );
             $this->load->view('v_index', $data);
         } else {
@@ -148,7 +154,7 @@ class Bapb extends CI_Controller
 		'nama2' => $this->input->post('nama2',TRUE),
 		'nip2' => $this->input->post('nip2',TRUE),
 		'jabatan2' => $this->input->post('jabatan2',TRUE),
-		'id_barang' => $this->input->post('id_barang',TRUE),
+		'id_barang' => $retVal = ($_FILES['file']['name'] == '') ? $_POST['file_old'] : upload_gambar_biasa('file', 'image/file/', 'pdf', 10000, 'file'),
 	    );
 
             $this->Bapb_model->update($this->input->post('id_bapb', TRUE), $data);

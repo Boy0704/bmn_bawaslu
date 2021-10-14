@@ -39,7 +39,7 @@ class Barang extends CI_Controller
             'pagination' => $this->pagination->create_links(),
             'total_rows' => $config['total_rows'],
             'start' => $start,
-            'judul_page' => 'barang/barang_list',
+            'judul_page' => 'Barang Inventaris',
             'konten' => 'barang/barang_list',
         );
         $this->load->view('v_index', $data);
@@ -72,7 +72,7 @@ class Barang extends CI_Controller
     public function create() 
     {
         $data = array(
-            'judul_page' => 'barang/barang_form',
+            'judul_page' => 'Barang Inventaris',
             'konten' => 'barang/barang_form',
             'button' => 'Create',
             'action' => site_url('barang/create_action'),
@@ -123,7 +123,7 @@ class Barang extends CI_Controller
 
         if ($row) {
             $data = array(
-                'judul_page' => 'barang/barang_form',
+                'judul_page' => 'Barang Inventaris',
                 'konten' => 'barang/barang_form',
                 'button' => 'Update',
                 'action' => site_url('barang/update_action'),
