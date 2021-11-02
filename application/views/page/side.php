@@ -32,6 +32,7 @@
         <li><a href="barang"><i class="fa fa-clone"></i> <span>Data Barang</span></a></li>
         <li><a href="permohonan_pinjam"><i class="fa fa-pencil"></i> <span>Permohonan Peminjaman <br> Barang</span></a></li>
         <li><a href="bapb"><i class="fa fa-pencil"></i> <span>Berita Acara Serah Terima</span></a></li>
+        <li><a href="pemeliharaan_kendaraan"><i class="fa fa-pencil"></i> <span>Riwayat Pemeliharaan Kendaraan</span></a></li>
         
         
       

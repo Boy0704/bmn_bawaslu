@@ -53,7 +53,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg">e-BMN</span>
+      <span class="logo-lg">Simata-BMN</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -144,7 +144,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0
     </div>
-    <strong>Copyright &copy; <?php echo date('Y') ?> <a href="#">e-BMN</a>.</strong> All rights
+    <strong>Copyright &copy; <?php echo date('Y') ?> <a href="#">Simata-BMN</a>.</strong> All rights
     reserved.
   </footer>
 

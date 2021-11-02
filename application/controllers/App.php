@@ -113,6 +113,11 @@ class App extends CI_Controller {
     	$this->session->set_flashdata('message', alert_biasa('Data berhasil dihapus','success'));
 		redirect('app/pengajuan','refresh');
     }
+
+    public function cetak($view)
+    {
+        $this->load->view('cetak/'.$view);
+    }
    
 
    

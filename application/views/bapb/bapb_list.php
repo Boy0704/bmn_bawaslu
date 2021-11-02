@@ -2,6 +2,7 @@
         <div class="row" style="margin-bottom: 10px">
             <div class="col-md-4">
                 <?php echo anchor(site_url('bapb/create'),'Create', 'class="btn btn-primary"'); ?>
+                <a href="app/cetak/bapb" class="btn btn-success"><i class="fa fa-print"></i> Cetak</a>
             </div>
             <div class="col-md-4 text-center">
                 <div style="margin-top: 8px" id="message">

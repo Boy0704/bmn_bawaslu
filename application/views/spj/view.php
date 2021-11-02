@@ -3,6 +3,7 @@
 		<div class="col-md-3">
 
 			<a href="app/tambah_pengajuan" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Dokumen SPJ</a>
+			<a href="" class="btn btn-success"><i class="fa fa-print"></i> Cetak</a>
 		</div>	
 	<?php endif ?>
 	
