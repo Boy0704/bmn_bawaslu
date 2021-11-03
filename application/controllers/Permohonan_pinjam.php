@@ -108,7 +108,6 @@ class Permohonan_pinjam extends CI_Controller
 		'id_barang' => $this->input->post('id_barang',TRUE),
 		'qty' => $this->input->post('qty',TRUE),
 		'keterangan' => $this->input->post('keterangan',TRUE),
-        'disetujui' => $this->input->post('disetujui',TRUE),
 		'created_at' => get_waktu(),
         'id_user' => $this->session->userdata('id_user')
 	    );
@@ -157,7 +156,6 @@ class Permohonan_pinjam extends CI_Controller
 		'id_barang' => $this->input->post('id_barang',TRUE),
 		'qty' => $this->input->post('qty',TRUE),
 		'keterangan' => $this->input->post('keterangan',TRUE),
-		'disetujui' => $this->input->post('disetujui',TRUE),
         'updated_at' => get_waktu(),
         'id_user' => $this->session->userdata('id_user')
 	    );

@@ -19,7 +19,9 @@ header("Content-Disposition: attachment; filename=Data Permohonan Pinjaman.xls")
             </thead>
             <tbody><?php
             $start = 1;
-            
+            if ($this->session->userdata('level') == 'user') {
+                $this->db->where('id_user', $this->session->userdata('id_user'));
+            }
             $permohonan_pinjam_data = $this->db->get('permohonan_pinjam');
             foreach ($permohonan_pinjam_data->result() as $permohonan_pinjam)
             {
