@@ -1,6 +1,6 @@
 <?php
 header("Content-type: application/vnd-ms-excel");
-header("Content-Disposition: attachment; filename=Data pemeliharaan_kendaraan.xls");
+header("Content-Disposition: attachment; filename=Data pemeliharaan kendaraan.xls");
 ?>
 
 <h2>Data Riwayat Pemeliharaan Kendaraan</h2>
@@ -16,7 +16,7 @@ header("Content-Disposition: attachment; filename=Data pemeliharaan_kendaraan.xl
         <th>Penanggung Jawab</th>
             </tr><?php
             $start = 1;
-            $pemeliharaan_kendaraan_data = $this->db->get('pemeliharaan_kendaraan')->results();
+            $pemeliharaan_kendaraan_data = $this->db->get('pemeliharaan_kendaraan')->result();
             foreach ($pemeliharaan_kendaraan_data as $pemeliharaan_kendaraan)
             {
                 ?>
