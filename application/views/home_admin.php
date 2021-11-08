@@ -183,7 +183,14 @@ function tahun($tahun)
   var salesChart       = new Chart(salesChartCanvas);
 
   var salesChartData = {
-    labels  : ['2021', '2022', '2023', '2024', '2025', '2026', '2027','2028','2029','2030'],
+    labels  : [
+      <?php 
+      $sql = "SELECT tahun_perolehan, count(nama_barang) as tot FROM barang GROUP BY tahun_perolehan ORDER BY tahun_perolehan ASC";
+      foreach ($this->db->query($sql)->result() as $rw) {
+        echo $rw->tahun_perolehan.',';
+      }
+       ?>
+    ],
     datasets: [
       {
         label               : 'Informasi Berkala',
@@ -195,9 +202,15 @@ function tahun($tahun)
         pointHighlightStroke: '#00c0ef',
         data                : [
                     <?php 
-                    for ($i=2021; $i < 2031 ; $i++) { 
-                      echo tahun($i).',';
+
+                    $sql = "SELECT tahun_perolehan, count(nama_barang) as tot FROM barang GROUP BY tahun_perolehan ORDER BY tahun_perolehan ASC";
+                    foreach ($this->db->query($sql)->result() as $rw) {
+                      echo $rw->tot.',';
                     }
+
+                    // for ($i=2021; $i < 2031 ; $i++) { 
+                    //   echo tahun($i).',';
+                    // }
 
                      ?>
         						// 300,
