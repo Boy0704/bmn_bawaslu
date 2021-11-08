@@ -8,6 +8,61 @@
 
 </div>
 
+  
+</div class="row">
+  <div class="col-md-12" style="margin-bottom: 20px; margin-top: 20px; margin-right: 20px;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <?php 
+      
+      for ($i=0; $i < 15; $i++) { 
+        $active = "";
+        if ($i == 0) {
+          $active = "class='active'";
+        }
+        ?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" <?php echo $active ?>></li>
+
+        <?php
+      }
+       ?>
+      
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <?php 
+      
+      for ($i=1; $i < 16; $i++) { 
+        $active = "";
+        if ($i == 1) {
+          $active = "active";
+        }
+        ?>
+        <div class="item <?php echo $active ?>">
+          <img src="image/slide/<?php echo $i ?>.jpg" alt="image <?php echo $i ?>" style="width:100%;">
+        </div>
+
+        <?php
+      }
+       ?>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+</div>
+
 <div class="row">
     <div class="col-md-12">
       <div class="box">
@@ -100,7 +155,13 @@
 	    <!-- /.col -->
 	</div>
 
-
+<?php 
+function tahun($tahun)
+{
+  $this->db->get('tahun_perolehan', $tahun);
+  return $this->db->get('barang')->num_rows();
+}
+ ?>
 <script src="assets/bower_components/chart.js/Chart.js"></script>
 <script type="text/javascript">
 	$(function () {
@@ -133,16 +194,22 @@
         pointHighlightFill  : '#fff',
         pointHighlightStroke: '#00c0ef',
         data                : [
-        						300,
-        						200,
-        						30,
-        						300,
-        						500,
-        						100,
-        						400,
-        						330,
-        						350,
-        						380
+                    <?php 
+                    for ($i=2021; $i < 2031 ; $i++) { 
+                      echo tahun($i).',';
+                    }
+
+                     ?>
+        						// 300,
+        						// 200,
+        						// 30,
+        						// 300,
+        						// 500,
+        						// 100,
+        						// 400,
+        						// 330,
+        						// 350,
+        						// 380
         					  ]
       }
     ]

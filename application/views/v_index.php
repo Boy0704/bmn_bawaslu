@@ -28,6 +28,7 @@
   <!-- jQuery 3 -->
 <script type="text/javascript" src="assets/pace/pace.min.js"></script>
 <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 <!-- Bootstrap 3.3.7 -->
@@ -161,7 +162,7 @@
 <!-- Select2 -->
 <script src="assets/bower_components/select2/dist/js/select2.full.min.js"></script>
 
-<script src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 <!-- DataTables -->
 <script src="assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
