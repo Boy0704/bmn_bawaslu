@@ -92,7 +92,11 @@
           <div class="row">
             <div class="col-md-12">
               <p class="text-center">
-                <strong> 2021 - 2031</strong>
+                <?php 
+                $tahun_awal = $this->db->query("SELECT min(tahun_perolehan) as tahun FROM barang")->row()->tahun;
+                $tahun_akhir = $this->db->query("SELECT max(tahun_perolehan) as tahun FROM barang")->row()->tahun;
+                 ?>
+                <strong> <?php echo $tahun_awal ?> - <?php echo $tahun_akhir ?></strong>
               </p>
 
               <div class="chart">
