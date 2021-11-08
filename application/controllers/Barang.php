@@ -86,7 +86,8 @@ class Barang extends CI_Controller
 	    'satuan' => set_value('satuan'),
 	    'harga_satuan' => set_value('harga_satuan'),
 	    'harga_barang' => set_value('harga_barang'),
-	    'kondisi_barang' => set_value('kondisi_barang'),
+        'kondisi_barang' => set_value('kondisi_barang'),
+	    'pemilik' => set_value('pemilik'),
 	);
         $this->load->view('v_index', $data);
     }
@@ -108,7 +109,8 @@ class Barang extends CI_Controller
 		'satuan' => $this->input->post('satuan',TRUE),
 		'harga_satuan' => $this->input->post('harga_satuan',TRUE),
 		'harga_barang' => $this->input->post('harga_barang',TRUE),
-		'kondisi_barang' => $this->input->post('kondisi_barang',TRUE),
+        'kondisi_barang' => $this->input->post('kondisi_barang',TRUE),
+		'pemilik' => $this->input->post('pemilik',TRUE),
 	    );
 
             $this->Barang_model->insert($data);
@@ -137,7 +139,8 @@ class Barang extends CI_Controller
 		'satuan' => set_value('satuan', $row->satuan),
 		'harga_satuan' => set_value('harga_satuan', $row->harga_satuan),
 		'harga_barang' => set_value('harga_barang', $row->harga_barang),
-		'kondisi_barang' => set_value('kondisi_barang', $row->kondisi_barang),
+        'kondisi_barang' => set_value('kondisi_barang', $row->kondisi_barang),
+		'pemilik' => set_value('pemilik', $row->pemilik),
 	    );
             $this->load->view('v_index', $data);
         } else {
@@ -163,7 +166,8 @@ class Barang extends CI_Controller
 		'satuan' => $this->input->post('satuan',TRUE),
 		'harga_satuan' => $this->input->post('harga_satuan',TRUE),
 		'harga_barang' => $this->input->post('harga_barang',TRUE),
-		'kondisi_barang' => $this->input->post('kondisi_barang',TRUE),
+        'kondisi_barang' => $this->input->post('kondisi_barang',TRUE),
+		'pemilik' => $this->input->post('pemilik',TRUE),
 	    );
 
             $this->Barang_model->update($this->input->post('id_barang', TRUE), $data);
@@ -197,7 +201,8 @@ class Barang extends CI_Controller
 	$this->form_validation->set_rules('satuan', 'satuan', 'trim|required');
 	$this->form_validation->set_rules('harga_satuan', 'harga satuan', 'trim|required');
 	$this->form_validation->set_rules('harga_barang', 'harga barang', 'trim|required');
-	$this->form_validation->set_rules('kondisi_barang', 'kondisi barang', 'trim|required');
+    $this->form_validation->set_rules('kondisi_barang', 'kondisi barang', 'trim|required');
+	$this->form_validation->set_rules('pemilik', 'pemilik barang', 'trim|required');
 
 	$this->form_validation->set_rules('id_barang', 'id_barang', 'trim');
 	$this->form_validation->set_error_delimiters('<span class="text-danger">', '</span>');

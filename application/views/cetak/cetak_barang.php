@@ -23,6 +23,7 @@ header("Content-Disposition: attachment; filename=Data Barang.xls");
                 
                 <th rowspan="">Harga Satuan</th>
                 <th>Harga Barang</th>
+                <th>Pemilik</th>
                 
             </tr>
             <?php
@@ -42,7 +43,8 @@ header("Content-Disposition: attachment; filename=Data Barang.xls");
 			<td><?php echo $barang->satuan ?></td>
 			<td><?php echo $barang->harga_satuan ?></td>
 			<td><?php echo $barang->harga_barang ?></td>
-			<td><?php echo $barang->kondisi_barang ?></td>
+            <td><?php echo $barang->kondisi_barang ?></td>
+			<td><?php echo $barang->pemilik ?></td>
 		</tr>
                 <?php
                 $start++;

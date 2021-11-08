@@ -50,6 +50,7 @@
                 
                 <th rowspan="">Harga Satuan</th>
                 <th>Harga Barang</th>
+                <th>Pemiliki</th>
                 
             </tr>
             <?php
@@ -67,7 +68,8 @@
 			<td><?php echo $barang->satuan ?></td>
 			<td><?php echo $barang->harga_satuan ?></td>
 			<td><?php echo $barang->harga_barang ?></td>
-			<td><?php echo $barang->kondisi_barang ?></td>
+            <td><?php echo $barang->kondisi_barang ?></td>
+			<td><?php echo $barang->pemilik ?></td>
 			<td style="text-align:center" width="200px">
 				<?php 
 				echo anchor(site_url('barang/update/'.$barang->id_barang),'<span class="label label-info">Ubah</span>'); 
