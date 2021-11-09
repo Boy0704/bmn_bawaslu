@@ -46,7 +46,7 @@
             </select>
         </div>
         <div class="form-group">
-            <label for="int">Pemilik <?php echo form_error('pemilik') ?></label>
+            <label for="int">Pengguna <?php echo form_error('pemilik') ?></label>
             <input type="text" class="form-control" name="pemilik" id="pemilik" placeholder="Pemilik Barang" value="<?php echo $pemilik; ?>" />
         </div>
 	    <input type="hidden" name="id_barang" value="<?php echo $id_barang; ?>" /> 

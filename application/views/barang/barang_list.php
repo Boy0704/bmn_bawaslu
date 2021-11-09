@@ -39,7 +39,7 @@
                 <th rowspan="2">Satuan</th>
                 <th colspan="2" style="text-align: center;">Harga</th>
                 <th rowspan="2">Kondisi Barang</th>
-                <th rowspan="2">Pemilik</th>
+                <th rowspan="2">Pengguna</th>
                 <th rowspan="2">Action</th>
             </tr>
             <tr>
