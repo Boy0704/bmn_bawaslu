@@ -20,7 +20,7 @@
             <thead>
             <tr>
                 <th>No</th>
-		<th>Nip</th>
+		<th>Masa Pinjam</th>
 		<th>Nama</th>
 		<th>Barang</th>
 		<th>Qty</th>
